@@ -1,0 +1,19 @@
+{
+  "name": "tcc-projeto",
+  "version": "1.0.0",
+  "description": "using classroom api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcelo-oliveira-agamenon/TCC-projetoIntegrador.git"
+  },
+  "author": "Marcelo Oliveira, Filipe Nascimento",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marcelo-oliveira-agamenon/TCC-projetoIntegrador/issues"
+  },
+  "homepage": "https://github.com/marcelo-oliveira-agamenon/TCC-projetoIntegrador#readme"
+}
