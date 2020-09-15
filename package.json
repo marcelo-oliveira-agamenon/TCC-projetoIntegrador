@@ -4,6 +4,8 @@
   "description": "using classroom api",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +17,9 @@
   "bugs": {
     "url": "https://github.com/marcelo-oliveira-agamenon/TCC-projetoIntegrador/issues"
   },
-  "homepage": "https://github.com/marcelo-oliveira-agamenon/TCC-projetoIntegrador#readme"
+  "homepage": "https://github.com/marcelo-oliveira-agamenon/TCC-projetoIntegrador#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4"
+  }
 }
