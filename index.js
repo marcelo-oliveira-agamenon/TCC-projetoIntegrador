@@ -3,15 +3,12 @@ const app = new express();
 const path = require("path");
 const router = express.Router();
 const fs = require("fs");
+const readline = require("readline");
 const { google } = require("googleapis");
 
 app.use("/static", express.static("./pages"));
-
-fs.readFile("credentials.json", (err, content) => {
-  if (err) return console.log("Error loading client secret file:", err);
-  // Authorize a client with credentials, then call the Google Classroom API.
-  authorize(JSON.parse(content), listCourses);
-});
+const TOKEN_PATH = "token.json";
+const SCOPES = ["https://www.googleapis.com/auth/classroom.courses.readonly"];
 
 /**
  * Create an OAuth2 client with the given credentials, and then execute the
@@ -93,6 +90,11 @@ function listCourses(auth) {
 }
 
 router.get("/", function (request, response) {
+  fs.readFile("credentials.json", (err, content) => {
+    if (err) return console.log("Error loading client secret file:", err);
+    // Authorize a client with credentials, then call the Google Classroom API.
+    authorize(JSON.parse(content), listCourses);
+  });
   response.sendFile(path.join(__dirname + "/pages/login/index.html"));
 });
 
