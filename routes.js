@@ -36,10 +36,7 @@ router.get("/listCourse", (req, res) => {
   fs.readFile("credentials.json", (err, content) => {
     if (err) return console.log("Error loading client secret file:", err);
     // Authorize a client with credentials, then call the Google Classroom API.
-    a = auth.authorize(JSON.parse(content), (b) => {
-      listCourses(auth);
-      return b;
-    });
+    a = auth.authorize(JSON.parse(content), listCourses);
   });
 
   return res.status(200).send({
