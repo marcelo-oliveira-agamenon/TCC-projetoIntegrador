@@ -22,6 +22,7 @@ router.get("/listCourse", (req, res) => {
       (err, res) => {
         if (err) return console.error("The API returned an error: " + err);
         const courses = res.data.courses;
+        console.log(courses);
         if (courses && courses.length) {
           resp = courses;
         } else {
@@ -36,7 +37,7 @@ router.get("/listCourse", (req, res) => {
     if (err) return console.log("Error loading client secret file:", err);
     // Authorize a client with credentials, then call the Google Classroom API.
     a = auth.authorize(JSON.parse(content), (b) => {
-      console.log(b);
+      listCourses(auth);
       return b;
     });
   });
