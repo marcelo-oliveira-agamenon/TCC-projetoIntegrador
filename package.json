@@ -23,6 +23,7 @@
     "googleapis": "^39.2.0",
     "mysql2": "^2.2.5",
     "nodemon": "^2.0.4",
-    "sequelize": "^6.3.5"
+    "sequelize": "^6.3.5",
+    "sequelize-cli": "^6.2.0"
   }
 }
