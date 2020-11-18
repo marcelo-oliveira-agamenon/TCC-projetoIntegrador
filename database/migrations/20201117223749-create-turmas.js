@@ -4,8 +4,9 @@ module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable("turmas", {
       id: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.BIGINT(20),
         allowNull: false,
+        primaryKey: true,
         onUpdate: "CASCADE",
         onDelete: "CASCADE",
       },
@@ -26,12 +27,22 @@ module.exports = {
       },
 
       room: {
-        type: Sequelize.NUMBER,
+        type: Sequelize.INTEGER,
         allowNull: false,
       },
 
       state: {
-        type: Sequelize.BOOLEAN,
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+
+      created_at: {
+        type: Sequelize.DATE,
+        allowNull: false,
+      },
+
+      updated_at: {
+        type: Sequelize.DATE,
         allowNull: false,
       },
     });

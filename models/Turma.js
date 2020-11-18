@@ -7,6 +7,7 @@ class Turma extends Model {
         id: {
           type: DataTypes.INTEGER,
           allowNull: false,
+          primaryKey: true,
           onUpdate: "CASCADE",
           onDelete: "CASCADE",
         },
@@ -27,7 +28,7 @@ class Turma extends Model {
         },
 
         room: {
-          type: DataTypes.NUMBER,
+          type: DataTypes.INTEGER,
           allowNull: false,
         },
 
