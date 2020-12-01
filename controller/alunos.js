@@ -15,6 +15,13 @@ exports.list = async (req, res) => {
       (err, a) => {
         if (err) return console.error("The API returned an error: " + err);
 
+        a.data.students.map(async (student) => {
+          const aluno = await Aluno.create({
+            userId: student.userId,
+            courseId: student.courseId,
+          });
+        });
+
         return res.status(200).send({
           message: "sucess",
         });
